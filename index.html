@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daru Estates</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" />
+    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <style type="text/css">
+        .preloader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99999999;
+            background-color: #fff;
+        }
+        .preloader .loading {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            font: 14px arial;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+        $(".preloader").fadeOut();
+    })
+    </script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar:hover {
+        width: 8px;
+        opacity: 1;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        display: none;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(194, 194, 194); 
+        border-radius: 15pc;
+        opacity: 0;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(116, 116, 116); 
+        border-radius: 15pc;
+        opacity: 1;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+    body{
+        font-family: 'Noto Sans JP', sans-serif;
+        overflow-x: hidden;
+    }
+    .nav{
+        width: 100%;
+        height: 60px;
+        position: sticky;
+        BACKGROUND-COLOR: #ffffffc7;
+        z-index: 999999;
+        top: 0;
+        transition: .5s ease-in-out;
+    }
+    .nav:hover{
+        cursor: unset;
+        background-color: white;
+        height: 75px;
+        border-bottom: 1px solid rgb(14 162 75);
+        transition: .5s ease-in-out;
+    }
+    .nav-logo{
+        width: 120px;
+    }
+    .nav .container{
+        display: flex;
+    }
+    .nav .col-6{
+        margin: auto;
+    }
+    .nav ul{
+        list-style: none;
+        text-decoration: none;
+    }
+    .nav li{
+        float: left;
+        margin: 10px 19px;
+    }
+    .nav a{
+        color: black;
+        transition: .5 ease-in-out all;
+    }
+    .nav a:hover{
+        color: rgb(21, 161, 21);
+        text-decoration: none;
+        transition: .5 ease-in-out all;
+    }
+    .slider{
+        margin-top: -60px;
+    }
+    .slider .carousel.slide{
+        height: 90vh;
+    }
+    .slider .carousel-inner{
+        height: 90vh;
+    }
+    .tittle{
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    h3.tittle {
+        font-weight: 600;
+        text-transform: unset;
+        font-size: 28px;
+    }
+    .content{
+        overflow-x: hidden;
+    }
+    .content .row:nth-child(2){
+        box-shadow: 10px 0px 16px #cacaca47;
+        padding: 60px 0px !important;
+        margin-top: 85px !important;
+    }
+    .content .video{
+        padding: 0px;
+        padding: 0px 20px;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .content .description{
+        padding: 0px 200px 0px 0px;
+        height: 500px;
+    }
+    .content .description ul{
+        padding: 0;
+    }
+    .content .description li{
+        list-style: none;
+    }
+    .content .description li .fa{
+        color: rgb(21, 161, 21);
+    }
+    iframe{
+        right: 0;
+        position: relative;
+        float: right;
+        width: 85%;
+    }
+    .card-text:last-child {
+        margin-bottom: 0;
+        height: 150px;
+        overflow: auto;
+        margin: 35px 0px 0px 0px;
+    }
+    .card-container{
+        margin: auto;
+    }
+    .card-img-top{
+        width: 50%;
+        margin: 32px auto;
+    }
+    .card-title{
+        font-weight: 700;
+        text-align: center;
+    }
+    .card-custom.float-left.m-3.col-3 {
+        width: 275px;
+        border: 1px solid rgb(0 0 0 / 25%);
+        padding: 0px;
+        border-radius: 4px;
+        text-align: center;
+    }
+    .card-custom.float-left.m-3.col-3 img {
+        width: 100%;
+        height: 290px;
+        object-fit: cover;
+        margin-bottom: 15px;
+    }
+    .card-custom.float-left.m-3.col-3 h3{
+        text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .card-custom.float-left.m-3.col-3 h6{
+        text-align: start;
+        font-weight: 300;
+        padding-left: 20px;
+        margin: 0;
+    }
+    .card-custom.float-left.m-3.col-3 h4{
+        text-align: start;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+    }
+    .card-custom.float-left.m-3.col-3 ul{
+        margin-bottom: 20px;
+    }
+    .card-custom.float-left.m-3.col-3 ul li{
+        text-align: start;
+        font-size: 12px;
+    }
+    .card-custom.float-left.m-3.col-3 button{
+        padding: 5px 10px;
+        margin-bottom: 15px;
+    }
+    .footer .row{
+        width: 100%;
+        margin: 0;
+    }
+    .footer .col-6:nth-child(1).left{
+        z-index: 2;
+        overflow: hidden;
+        box-shadow: 5px 0px 10px lightgray;
+        padding: 0;
+    }
+    .footer .col-6:nth-child(1).left img{
+        height: 100%;
+    }
+    .footer .row:nth-child(1) .col-6:nth-child(2).right{
+        box-shadow: 5px 0px 10px lightgray;
+        background-image: url('Test/vector-gym-pattern-seamless-background-260nw-1064804288.webp');
+        background-size: cover;
+        background-blend-mode: lighten;
+        padding: 0;
+    }
+    .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper {
+        background-color: rgb(255 255 255 / 93%);
+        width: 100%;
+        height: 502px;
+    }
+    .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper img{
+        padding-top: 0px;
+        margin-bottom: 20px;
+    }
+    .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper img.open{
+        padding-top: 150px;
+        margin: auto;
+    }
+    .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper h3{
+        font-weight: 700;
+    }
+    .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper .col-12:nth-child(1){
+        padding-top: 100px;
+    }
+    .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper .col-12:nth-child(2){
+        padding: 0px 190px;
+        line-height: 1.7;
+        margin-top: 30px;
+    }
+    .btn{
+        border-radius: 15pc;
+    }
+    .btn-read{
+        margin: auto;
+    }
+    .hide{
+        display: none;
+    }
+    .open{
+        display: block;
+    }
+    .slick-prev:before, .slick-next:before {
+        opacity: 1;
+        color: #0c9d48;
+    }
+    .contact-wrapper .col-8{
+        padding: 50px 0px;
+    }
+    .contact-wrapper .col-8{
+        padding-left: 150px;
+        border-right: 1px solid #14a54b91;
+    }
+    .contact-wrapper .col-4{
+        padding-top: 50px;
+        padding-left: 30px;
+        background-color: #14a54c;
+    }
+    .contact-wrapper .col-8 img{
+        margin-bottom: 40px;
+        width: 250px;
+    }
+    .contact-wrapper .col-8 .phone a{
+        color: #089c46;
+        text-decoration: underline;
+        font-weight: 600;
+    }
+    .contact-wrapper .col-8 a{
+        color: #089c46;
+        text-decoration: underline;
+        font-weight: 600;
+    }
+    .contact-icon a {
+        font-size: 24px;
+        margin: 0px 7px;
+    }
+    .contact-icon a:nth-child(1) {
+        margin-left: 0px;
+    }
+    .row.mt-5.contact-wrapper {
+        border: 1px solid #14a54b91;
+    }
+    .contact-wrapper .brosure h3{
+        color: white;
+        font-weight: 700;
+        font-size: 26px;
+    }
+    .contact-wrapper .brosure .wrapper-brosure{
+        display: flex;
+    }
+    .contact-wrapper .brosure .wrapper-brosure .col-5{
+        margin: 50px auto;
+    }
+    .contact-wrapper .brosure .wrapper-brosure .col-5 a:hover::after {
+        content: "Download";
+        color: white;
+        padding: 140px 0px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.486);
+        width: 88%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        margin: 0px 15px;
+    }
+    .contact-wrapper .brosure .wrapper-brosure .col-5 img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .card.col-3.float-left.m-3 {
+        transition: .5s ease-in-out all;
+    }
+    .card.col-3.float-left.m-3:hover {
+        box-shadow: 0px 0px 10px lightgrey;
+        transition: .5s ease-in-out all;
+    }
+</style>
+<body>
+    <div class="preloader">
+        <div class="loading">
+            <img src="Test/583b6136197347.571361641da25.gif" width="550">
+        </div>
+    </div>
+    <div class="nav">
+        <div class="container">
+            <div class="col-6 float-left">
+                <img class="nav-logo" src="Test/LOGO-02SS.png" alt="" srcset="">
+            </div>
+            <div class="col-6  float-left">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="https://www.daruestates.com/profile.php">Profile</a></li>
+                    <li><a href="https://www.daruestates.com/gallery.php">Galery</a></li>
+                    <li><a href="http://artikel.daruestates.com/">Info & News</a></li>
+                    <li><a href="https://www.daruestates.com/contact.php">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="slider">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="Test/123oke.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="Test/jargonx.jpg" alt="Second slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="row mt-5">
+            <div class="col-12 text-center mb-4 pa-0  pt-4">
+                <h1 class="tittle">Transportasi Mudah, Harga Terjangkau</h1>
+            </div>
+            <div class="col-6 video">
+                <iframe src="https://www.youtube.com/embed/uQfrF8ldFec?rel=0&showinfo=0" frameborder="0"></iframe>
+            </div>
+            <div class="col-6 description">
+                <h3 class="tittle">Kami memudahkan dan melayani anda</h3>
+                <p>
+                    Daru Estates adalah hunian subsidi yang dikembangkan oleh PT Arifindo Adiputra Ariaguna dengan lahan pembangunan yang sangat luas, Daru Estates kini menjadi salah satu pusat hunian yang paling banyak diminati di kawasan berkembang Tangerang. Kini sudah ratusan kepala keluarga yang menempati hunian di Daru Estates dan ribuan rumah sudah terjual. hunian Daru Estates menjadi pilihan karena letaknya yang sangat dekat dengan Stasiun Daru Tangerang dan dekat dengan lokasi strategis seperti pasar dan pusat kota.
+                </p>
+                <ul>
+                    <li>
+                    <i class="fa fa-check"></i> Menerapkan Sistem Transit Oriented Development
+                    </li>
+                    <li>
+                    <i class="fa fa-check"></i> Harga Terjangkau dan Kualitas Terbaik
+                    </li>
+                    <li>
+                    <i class="fa fa-check"></i> Dekat Dengan Fasilitas Umum dan Pusat Kota
+                    </li>
+                    <li>
+                    <i class="fa fa-check"></i> Renovaion of Commercial Office
+                    </li>
+                    <li>
+                    <i class="fa fa-check"></i> Make Quality Products
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-5 pt-4">
+            <div class="col-12 text-center mb-4 pa-0">
+                <h1 class="tittle">8 Keunggulan DARU ESTATES</h1>
+            </div>
+            <div class="card-container">
+                <div class="card col-3 float-left m-3" style="width: 18rem;">
+                    <img class="card-img-top" src="Test/clock.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">10 Menit dari Stasiun Daru</h5>
+                        <p class="card-text">Lokasi Daru Estates sangat dekat dengan Stasiun Daru, Hanya 10 Menit jika Berjalan Kaki.</p>
+                    </div>
+                </div>
+                <div class="card col-3 float-left m-3" style="width: 18rem;">
+                    <img class="card-img-top" src="Test/save-money.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Cicilan Murah hanya 1 Juta-an</h5>
+                        <p class="card-text">Harga Rumah Hunian di Daru Estates relatif murah dan promonya cukup menarik, Harga cicilan cuman 1 jutaan.</p>
+                    </div>
+                </div>
+                <div class="card col-3 float-left m-3" style="width: 18rem;">
+                    <img class="card-img-top" src="Test/business-and-trade.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Spesifikasi Bangunan yang Berkualitas</h5>
+                        <p class="card-text">Daru Estates menggunakan spesifikasi bangunan yang berkualitas pada pembangunannya. Seperti pintu kayu Solid, Atap Baja ringan, Keramil lantai granito 60 X 60, dinding hebel, dan yang siap untuk dijadikan 2 lantai.</p>
+                    </div>
+                </div>
+                <div class="card col-3 float-left m-3" style="width: 18rem;">
+                    <img class="card-img-top" src="Test/house.png" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Bebas Banjir Hijau dan Asri</h5>
+                        <p class="card-text">Daru Estates memiliki lingkungan yang sudah pasti bebas banjir , dan udara yang bersih bebas polusi serta Asri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 pt-4">
+            <div class="col-12 text-center mb-4 pa-0">
+                <h1 class="tittle">UNIT DARU ESTATES</h1>
+            </div>
+            <div class="card-container unit container">
+                <div class="card-custom float-left m-3 col-3">
+                    <img src="Test/unit1.jpeg" alt="">
+                    <h3>Unit 1</h3>
+                    <ul>
+                        <li>Tahun 2019</li>
+                        <li>Type 23/60</li>
+                        <li>120+ Unit</li>
+                    </ul>
+                    <h6>DP Mulai</h6>
+                    <h4>Rp.150.000.000,-</h4>
+                    <button class="btn btn-outline-success">See More</button>
+                </div>
+                <div class="card-custom float-left m-3 col-3">
+                    <img src="Test/unit5.jpeg" alt="">
+                    <h3>Unit 1</h3>
+                    <ul>
+                        <li>Tahun 2019</li>
+                        <li>Type 23/60</li>
+                        <li>120+ Unit</li>
+                    </ul>
+                    <h6>DP Mulai</h6>
+                    <h4>Rp.150.000.000,-</h4>
+                    <button class="btn btn-outline-success">See More</button>
+                </div>
+                <div class="card-custom float-left m-3 col-3">
+                    <img src="Test/mrk3.jpg" alt="">
+                    <h3>Unit 1</h3>
+                    <ul>
+                        <li>Tahun 2019</li>
+                        <li>Type 23/60</li>
+                        <li>120+ Unit</li>
+                    </ul>
+                    <h6>DP Mulai</h6>
+                    <h4>Rp.150.000.000,-</h4>
+                    <button class="btn btn-outline-success">See More</button>
+                </div>
+                <div class="card-custom float-left m-3 col-3">
+                    <img src="Test/lingkungan4.jpg" alt="">
+                    <h3>Unit 1</h3>
+                    <ul>
+                        <li>Tahun 2019</li>
+                        <li>Type 23/60</li>
+                        <li>120+ Unit</li>
+                    </ul>
+                    <h6>DP Mulai</h6>
+                    <h4>Rp.150.000.000,-</h4>
+                    <button class="btn btn-outline-success">See More</button>
+                </div>
+                <div class="card-custom float-left m-3 col-3">
+                    <img src="Test/unit5.jpeg" alt="">
+                    <h3>Unit 1</h3>
+                    <ul>
+                        <li>Tahun 2019</li>
+                        <li>Type 23/60</li>
+                        <li>120+ Unit</li>
+                    </ul>
+                    <h6>DP Mulai</h6>
+                    <h4>Rp.150.000.000,-</h4>
+                    <button class="btn btn-outline-success">See More</button>
+                </div>
+                <div class="card-custom float-left m-3 col-3">
+                    <img src="Test/unit1.jpeg" alt="">
+                    <h3>Unit 1</h3>
+                    <ul>
+                        <li>Tahun 2019</li>
+                        <li>Type 23/60</li>
+                        <li>120+ Unit</li>
+                    </ul>
+                    <h6>DP Mulai</h6>
+                    <h4>Rp.150.000.000,-</h4>
+                    <button class="btn btn-outline-success">See More</button>
+                </div>
+                <div class="card-custom float-left m-3 col-3">
+                    <img src="Test/lingkungan4.jpg" alt="">
+                    <h3>Unit 1</h3>
+                    <ul>
+                        <li>Tahun 2019</li>
+                        <li>Type 23/60</li>
+                        <li>120+ Unit</li>
+                    </ul>
+                    <h6>DP Mulai</h6>
+                    <h4>Rp.150.000.000,-</h4>
+                    <button class="btn btn-outline-success">See More</button>
+                </div>
+                <div class="card-custom float-left m-3 col-3">
+                    <img src="Test/jual1.jpg" alt="">
+                    <h3>Unit 1</h3>
+                    <ul>
+                        <li>Tahun 2019</li>
+                        <li>Type 23/60</li>
+                        <li>120+ Unit</li>
+                    </ul>
+                    <h6>DP Mulai</h6>
+                    <h4>Rp.150.000.000,-</h4>
+                    <button class="btn btn-outline-success">See More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer mt-5">
+        <div class="row mt-5">
+            <div class="col-6 left"><img src="Test/123oke.png" alt=""></div>
+            <div class="col-6 right">
+                <div class="col-12 p-0 m-auto text-center">
+                    <div class="wrapper">
+                        <img class="open" src="Test/LOGO.png" alt="">
+                        <h3 class="open">DARU ESTATES</h3>
+                        <p class="open"><b>KENALAN LEBIH LAGI TENTANG DARU ESTATES</b></p>
+                        <div class="hide">
+                            <div class="col-12">
+                                <img src="Test/LOGO-02SS.png" alt="">
+                            </div>
+                            <div class="col-12">
+                                <p>Transportasi Mudah, Harga Terjangkau. Daru Estates adalah hunian subsidi yang dikembangkan oleh PT Arifindo Adiputra Ariaguna, dengan menerapkan Sistem Transit Oriented Development, Daru Estates menjadi pilihan karena letaknya yang sangat dekat dengan Stasiun Daru Tangerang dan dekat dengan lokasi strategis seperti pasar dan pusat kota</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline-secondary btn-read hide">Read More</button>
+                        <button class="btn btn-outline-secondary btn-read open">Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row contact-wrapper">
+            <div class="col-8">
+                <img src="Test/LOGO-02SS.png" alt="">
+                <h4>Hubungi Kami</h4>
+                <p>Jadwalkan kunjungan ke Daru Estates dan dapatkan hunian subsidi terbaik hanya di Daru Estates !</p>
+                <div class="footer-contacts">
+                    <p class="phone"><span>Telepon:</span>
+                        <br/><a href="tel:+628170070058"> +6281-7007-0058</a> or <a href="https://wa.me/628170070058"><i class="fa fa-whatsapp">&nbspwhatsapp</i></a>
+                        <br><a href="tel:+62811800678"> +62 811-800-678</a> or <a href="https://wa.me/62811800678"><i class="fa fa-whatsapp">&nbspwhatsapp</i></a>
+                        <br></p>
+                    <p><span>Email:</span> <a href="mailto:info@daruestates.com?Subject=Pertanyaan%20Tentang%20Daru"> info@daruestates.com</a></p>
+                    <p><span>Jam Kerja:</span> 9am-5pm</p>
+                </div>
+				<div class="contact-icon">
+                    <a href="https://www.facebook.com/daru.estates.92"><i class="fa fa-facebook-official"></i></a>
+                    <a href="https://www.instagram.com/daru.estates/"><i class="fa fa-instagram"></i></a>
+                    <a href="https://wa.me/62811800678"><i class="fa fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="col-4 brosure">
+                <h3>OUR E-BROCHURE</h3>
+                <div class="wrapper-brosure">
+                    <div class="col-5 float-left"><a href="assets/img/e-bros.pdf" target="_blank"><img src="Test/e-bros.png" alt="brosur"></a></div>
+                    <div class="col-5 float-left"><a href="assets/img/e-bros.pdf" target="_blank"><img src="Test/ebrosur-2.jpg" alt="brosur"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $('.unit').slick({
+            dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+                },
+                {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+                },
+                {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+                }
+            ]
+        });
+    });
+    
+    $('.col-6.right').mouseover(function(){
+        $('.open').animate({
+            opacity: 0,
+        }, 200, function(){
+            $(this).css("display", "none");
+            $('.hide').css("display", "block");
+            $('.hide').css("opacity", "1");
+        });
+    });
+
+    $('.col-6.right').mouseleave(function(){
+        $('.hide').animate({
+            opacity: 0,
+        }, 200, function(){
+            $(this).css("display", "none");
+            $('.open').css("display", "block");
+            $('.open').css("opacity", "1");
+        });
+    });
+</script>

@@ -235,7 +235,7 @@
     }
     .footer .row:nth-child(1) .col-6:nth-child(2).right{
         box-shadow: 5px 0px 10px lightgray;
-        background-image: url('Test/vector-gym-pattern-seamless-background-260nw-1064804288.webp');
+        background-image: url('/Daru-Estates-Evolution/Test/vector-gym-pattern-seamless-background-260nw-1064804288.webp');
         background-size: cover;
         background-blend-mode: lighten;
         padding: 0;
@@ -359,6 +359,152 @@
     .card.col-3.float-left.m-3:hover {
         box-shadow: 0px 0px 10px lightgrey;
         transition: .5s ease-in-out all;
+    }
+    .mobile{
+        display: none;
+    }
+    @media (max-width:768px){
+        .tittle{
+            font-size: 20px;
+        }
+        .nav {
+            height: 70px;
+            background-color: white;
+        }
+        .nav .col-6.float-left {
+            float: none !important;
+        }
+        .nav .col-6.float-left:nth-child(2) {
+            position: unset;
+        }
+        .nav ul {
+            position: absolute;
+            width: 100vw !important;
+            left: 0;
+            top: 70px;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 10px 10px 10px lightgray;
+            display: none;
+        }
+        .nav ul.active {
+            display: block;
+        }
+        .nav li {
+            float: none;
+            margin: 15px 0px;
+            height: 45px;
+            border-bottom: .5px solid lightgray;
+            display: flex;
+        }
+        .nav a {
+            margin: auto 0px;
+        }
+        .slider {
+            margin-top: 0px;
+        }
+        .mobile{
+            display: block;
+        }
+        .burger-icons {
+            float: right;
+            width: 35px;
+            height: 35px;
+            display: flex;
+        }
+        i.fa.fa-bars {
+            margin: auto;
+            font-size: 18px;
+        }
+        .content .description {
+            padding: 0px 50px 0px 10px;
+            height: unset;
+        }
+        .content .col-6 {
+            max-width: 100% !important;
+            flex: 0 0 100%;
+            padding: 0px 10%;
+        }
+        .content .video {
+            margin: 0px 0px 30px;
+        }
+        iframe {
+            width: 100%;
+            height: 30vh;
+        }
+        .content .row:nth-child(2) .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0px 10%;
+        }
+        .card.col-3.float-left.m-3 {
+            max-width: 50%;
+            flex: 0 0 47%;
+            margin: 3% auto !important;
+        }
+        .content .row:nth-child(2) .col-12.text-center.mb-4.pa-0 {
+            padding: 30px;
+        }
+        .content .row:nth-child(3) {
+            padding: 12%;
+        }
+        .footer {
+            margin: 0px !important;
+        }
+        .footer .row:nth-child(1) {
+            margin: 0px !important;
+        }
+        .footer .col-6.left {
+            display: none;
+        }
+        .footer .col-6.right {
+            max-width: 100%;
+            flex: 0 0 100% !important;
+        }
+        .open {
+            display: none;
+        }
+        .hide {
+            display: block;
+        }
+        .footer .row.contact-wrapper {
+            display: flex;
+            flex-flow: column-reverse;
+        }
+        .footer .col-4.brosure {
+            max-width: 100%;
+        }
+        .contact-wrapper .col-8 {
+            max-width: 100%;
+            padding: 10%;
+        }
+        .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper {
+            height: 100%;
+            background-position: top;
+            background-size: 110%;
+            padding: 0px 0px 1px;
+        }
+        .footer button.btn.btn-outline-secondary.btn-read.hide {
+            margin-bottom: 43px;
+        }
+        .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper img {
+            width: 100%;
+        }
+    }
+    @media (max-width:425px){
+        .card.col-3.float-left.m-3 {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+        .content .row:nth-child(3) {
+            padding: 17%;
+        }
+        .card-custom.float-left.m-3.col-3{
+            margin: auto !important;
+        }
+        .card-container.unit.container.slick-initialized.slick-slider.slick-dotted{
+            padding: 0px !important;
+        }
     }
 </style>
 <body>
@@ -664,6 +810,14 @@
                 }
             ]
         });
+    });
+	
+    $('.burger-icons').click(function(){
+        if (!$('.nav ul').hasClass("active")){
+            $('.nav ul').addClass("active");
+        }else{
+            $('.nav ul').removeClass("active");
+        }
     });
     
     $('.col-6.right').mouseover(function(){

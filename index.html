@@ -103,7 +103,7 @@
     }
     .nav li{
         float: left;
-        margin: 10px 19px;
+        margin: 10px 2%;
     }
     .nav a{
         color: black;
@@ -116,12 +116,6 @@
     }
     .slider{
         margin-top: -60px;
-    }
-    .slider .carousel.slide{
-        height: 90vh;
-    }
-    .slider .carousel-inner{
-        height: 90vh;
     }
     .tittle{
         text-transform: uppercase;
@@ -241,7 +235,7 @@
     }
     .footer .row:nth-child(1) .col-6:nth-child(2).right{
         box-shadow: 5px 0px 10px lightgray;
-        background-image: url('/Daru-Estates-Evolution/Test/vector-gym-pattern-seamless-background-260nw-1064804288.webp');
+        background-image: url('Test/vector-gym-pattern-seamless-background-260nw-1064804288.webp');
         background-size: cover;
         background-blend-mode: lighten;
         padding: 0;
@@ -263,10 +257,10 @@
         font-weight: 700;
     }
     .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper .col-12:nth-child(1){
-        padding-top: 100px;
+        padding-top: 10%;
     }
     .footer .row:nth-child(1) .col-6:nth-child(2).right .wrapper .col-12:nth-child(2){
-        padding: 0px 190px;
+        padding: 0px 11%;
         line-height: 1.7;
         margin-top: 30px;
     }
@@ -333,22 +327,31 @@
     .contact-wrapper .brosure .wrapper-brosure .col-5{
         margin: 50px auto;
     }
+    .contact-wrapper .brosure .wrapper-brosure .col-5 a {
+        padding: 0px;
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+    }
     .contact-wrapper .brosure .wrapper-brosure .col-5 a:hover::after {
         content: "Download";
         color: white;
-        padding: 140px 0px;
+        padding: 64% 0px 0px;
         text-align: center;
         background-color: rgba(0, 0, 0, 0.486);
-        width: 88%;
+        width: 100%;
         height: 100%;
         position: absolute;
         left: 0;
-        margin: 0px 15px;
+        top: 0;
+        margin: 0px 0px;
     }
-    .contact-wrapper .brosure .wrapper-brosure .col-5 img{
+    .contact-wrapper .brosure .wrapper-brosure .col-5 img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: top;
     }
     .card.col-3.float-left.m-3 {
         transition: .5s ease-in-out all;
